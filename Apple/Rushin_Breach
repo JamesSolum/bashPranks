@@ -1,3 +1,12 @@
+# RUSHIN BREACH
+#
+# Apple
+# 
+# Triggers terminal and prints random data
+#
+# Can be passed an ASCII image parameter (just a text file) and it will print that at the end
+# E.G. print a skull
+
 # Needs some type of Trigger
 
 # Print Detection Message
@@ -52,8 +61,10 @@ done
 sleep 2
 
 # Print Skull
-printf "\n \n \n \n"
-cat skull | while read; do echo "$REPLY"  && sleep 0.1; done
+if ! [ $# -eq 0 ]; then # If there is an ASCII Image parameter
+	image = $1
+	printf "\n \n \n \n"
+	cat $1 | while read; do echo "$REPLY"  && sleep 0.1; done
 
 $focus=false # Quit Terminal Focus
 
